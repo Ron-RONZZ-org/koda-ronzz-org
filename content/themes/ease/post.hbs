@@ -12,10 +12,11 @@
                 Last updated on&nbsp;
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date updated_at format="DD MMM YYYY"}}</time>
             </div>
-            <!-- Markmap button - will be shown/hidden by JavaScript based on meta tag -->
-            <a href="#" class="markmap-button" id="markmap-button" style="display: none;" target="_blank">
+            {{#if custom.markmap_url}}
+            <a href="{{custom.markmap_url}}" class="markmap-button" target="_blank">
                 Vidigi markmapon
             </a>
+            {{/if}}
             {{> "post-image"}}
         </header>
 

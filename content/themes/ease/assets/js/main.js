@@ -41,21 +41,3 @@ jQuery.noConflict();
         },
     });
 })(jQuery);
-
-// Markmap button functionality
-(function ($) {
-    'use strict';
-    $(document).ready(function () {
-        // Check for markmap-url meta tag
-        var markmapMeta = $('meta[name="markmap-url"]');
-        var markmapButton = $('#markmap-button');
-        
-        if (markmapMeta.length && markmapButton.length) {
-            var markmapUrl = markmapMeta.attr('content');
-            if (markmapUrl) {
-                markmapButton.attr('href', markmapUrl);
-                markmapButton.show();
-            }
-        }
-    });
-})(jQuery);
