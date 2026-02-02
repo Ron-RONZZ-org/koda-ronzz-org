@@ -1,0 +1,39 @@
+# Ghost specific
+node_modules/
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.ghost-cli
+current
+versions/
+content/themes/casper
+
+# Content directories that shouldn't be committed
+content/data/
+content/logs/
+content/adapters/
+content/public/
+
+# Theme build artifacts
+content/themes/*/node_modules/
+content/themes/*/dist/
+content/themes/*/assets/built/
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+.cache
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment and config
+.env
+config.*.json
+!config.production.json.example
