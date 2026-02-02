@@ -1,2 +1,0 @@
-{"name":"Log","hostname":"ronzz-linux-server-2","pid":277890,"level":50,"version":"6.16.0","msg":"Could not get webhook secret for ActivityPub FetchError: invalid json response body at https://read.ronzz.org/.ghost/activitypub/v1/site reason: Unexpected token 'e', \"fetch failed\" is not valid JSON","time":"2026-01-31T18:09:31.365Z","v":0}
-{"name":"Log","hostname":"ronzz-linux-server-2","pid":277890,"level":50,"version":"6.16.0","msg":"No webhook secret found - cannot initialise","time":"2026-01-31T18:09:31.365Z","v":0}
