@@ -6,13 +6,11 @@ node_modules/
 *.sqlite-wal
 .ghost-cli
 current
-versions/*/node_modules
-versions/*/core/built
-versions/*/content/data/*.db*
-versions/*/.ghost-cli
+versions/
+content/themes/casper
 
 # Content directories that shouldn't be committed
-content/data/*.db*
+content/data/
 content/logs/
 content/adapters/
 content/public/
