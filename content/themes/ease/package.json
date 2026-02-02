@@ -67,6 +67,11 @@
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"
+            },
+            "markmap_url": {
+                "type": "text",
+                "group": "post",
+                "description": "URL to the markmap visualization for this post"
             }
         }
     },
