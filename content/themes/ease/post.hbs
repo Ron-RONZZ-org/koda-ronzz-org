@@ -12,11 +12,7 @@
                 Last updated on&nbsp;
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date updated_at format="DD MMM YYYY"}}</time>
             </div>
-            {{#if @custom.markmap_url}}
-            <a href="{{@custom.markmap_url}}" class="markmap-button" target="_blank">
-                Vidigi markmapon
-            </a>
-            {{/if}}
+            <div id="markmap-button-container"></div>
             {{> "post-image"}}
         </header>
 

@@ -41,3 +41,31 @@ jQuery.noConflict();
         },
     });
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const targetContainer = document.getElementById('markmap-button-container');
+    const metaTag = document.querySelector('meta[name="markmap-url"]');
+    const urlValue = metaTag && metaTag.getAttribute('content');
+    
+    if (!targetContainer || !metaTag || !urlValue) return;
+    
+    try {
+        const parsedUrl = new URL(urlValue);
+        if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+            console.warn('Markmap URL must use http or https protocol:', urlValue);
+            return;
+        }
+    } catch (e) {
+        console.warn('Invalid markmap URL provided:', urlValue);
+        return;
+    }
+    
+    const linkElement = document.createElement('a');
+    linkElement.href = urlValue;
+    linkElement.className = 'markmap-button';
+    linkElement.target = '_blank';
+    linkElement.rel = 'noopener noreferrer';
+    linkElement.textContent = 'Vidigi markmapon';
+    
+    targetContainer.appendChild(linkElement);
+});
