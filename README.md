@@ -1,6 +1,6 @@
 # koda-ronzz-org
 
-Ghost blog repository for read.ronzz.org
+Ghost blog repository for kodo.ronzz.org
 
 ## Features
 
