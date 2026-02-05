@@ -42,7 +42,7 @@ jQuery.noConflict();
     });
 })(jQuery);
 
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     const targetContainer = document.getElementById('markmap-button-container');
     if (!targetContainer) return;
     
@@ -52,6 +52,15 @@ jQuery.noConflict();
     const urlValue = metaTag.getAttribute('content');
     if (!urlValue) return;
     
+    try {
+        const parsedUrl = new URL(urlValue);
+        if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+            return;
+        }
+    } catch (e) {
+        return;
+    }
+    
     const linkElement = document.createElement('a');
     linkElement.href = urlValue;
     linkElement.className = 'markmap-button';
@@ -60,4 +69,4 @@ jQuery.noConflict();
     linkElement.textContent = 'Vidigi markmapon';
     
     targetContainer.appendChild(linkElement);
-})();
+});
