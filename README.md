@@ -11,13 +11,16 @@ The ease theme supports adding a markmap visualization link to individual posts.
 **How to use:**
 
 1. In Ghost Admin, edit a post
-2. Go to the post settings (gear icon)
-3. Add a custom field:
-   - Field name: `markmap_url`
-   - Value: URL to your markmap visualization
-4. Save and publish
+2. Go to the post settings (gear icon)  
+3. Click on "Code injection"
+4. In the "Post Header" section, add:
+   ```html
+   <meta name="markmap-url" content="YOUR_MARKMAP_URL_HERE">
+   ```
+   Replace `YOUR_MARKMAP_URL_HERE` with the actual URL to your markmap visualization
+5. Save and publish
 
-The markmap button will automatically appear in the post header when `markmap_url` is set.
+The markmap button will automatically appear in the post header when the meta tag is present.
 
 ## Repository Structure
 
