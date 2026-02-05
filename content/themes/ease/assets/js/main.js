@@ -44,20 +44,19 @@ jQuery.noConflict();
 
 document.addEventListener('DOMContentLoaded', function () {
     const targetContainer = document.getElementById('markmap-button-container');
-    if (!targetContainer) return;
-    
     const metaTag = document.querySelector('meta[name="markmap-url"]');
-    if (!metaTag) return;
+    const urlValue = metaTag && metaTag.getAttribute('content');
     
-    const urlValue = metaTag.getAttribute('content');
-    if (!urlValue) return;
+    if (!targetContainer || !metaTag || !urlValue) return;
     
     try {
         const parsedUrl = new URL(urlValue);
         if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+            console.warn('Markmap URL must use http or https protocol:', urlValue);
             return;
         }
     } catch (e) {
+        console.warn('Invalid markmap URL provided:', urlValue);
         return;
     }
     
