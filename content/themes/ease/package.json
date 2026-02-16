@@ -69,7 +69,9 @@
                 "group": "homepage"
             },
             "markmap_url": {
-                "type": "text"
+                "type": "text",
+                "description": "URL to your Markmap visualization (leave blank to hide button)",
+                "group": "post"
             }
         }
     },
