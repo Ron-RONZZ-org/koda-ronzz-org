@@ -18,7 +18,7 @@ Markmap is a tool that visualizes markdown documents as interactive mind maps. T
 
 1. In the post/page settings panel, scroll down to find "Custom fields" section
 2. Add a new custom field:
-   - **Field name:** `markmap_url`
+   - **Field name:** `markmap_url` (Ghost will make this available in templates as `custom_markmap_url`)
    - **Field value:** Your markmap visualization URL (e.g., `https://markmap.example.com/my-visualization`)
 
 ### Step 3: Save and Publish
@@ -32,7 +32,7 @@ The markmap button will automatically appear below the post/page title with mult
 
 The button displays:
 ```
-Vidi ĉi tiun kiel markomapon
+Vidi ĉi tiun kiel markmapon
 Visualiser ce contenu en markmap
 View this content in markmap form
 ```

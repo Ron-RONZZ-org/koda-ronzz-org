@@ -67,7 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
     linkElement.className = 'markmap-button';
     linkElement.target = '_blank';
     linkElement.rel = 'noopener noreferrer';
-    linkElement.innerHTML = 'Vidi ĉi tiun kiel markomapon<br>Visualiser ce contenu en markmap<br>View this content in markmap form';
+    
+    // Create text nodes for each line to avoid XSS risks
+    linkElement.appendChild(document.createTextNode('Vidi ĉi tiun kiel markmapon'));
+    linkElement.appendChild(document.createElement('br'));
+    linkElement.appendChild(document.createTextNode('Visualiser ce contenu en markmap'));
+    linkElement.appendChild(document.createElement('br'));
+    linkElement.appendChild(document.createTextNode('View this content in markmap form'));
     
     targetContainer.appendChild(linkElement);
 });
