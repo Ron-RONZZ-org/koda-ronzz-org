@@ -8,23 +8,22 @@ Markmap is a tool that visualizes markdown documents as interactive mind maps. T
 
 ## Setup Instructions
 
-### Step 1: Edit Your Post or Page
+### Step 1: Access Theme Settings
 
 1. Log in to Ghost Admin
-2. Navigate to your post/page or create a new one
-3. Click the settings icon (⚙️) in the top right corner
+2. Navigate to **Settings** → **Design** → **Customize** (or click the **Customize** button)
+3. This opens the theme settings panel
 
-### Step 2: Add Custom Field
+### Step 2: Set the Markmap URL
 
-1. In the post/page settings panel, scroll down to find "Custom fields" section
-2. Add a new custom field:
-   - **Field name:** `markmap_url` (Ghost will make this available in templates as `custom_markmap_url`)
-   - **Field value:** Your markmap visualization URL (e.g., `https://markmap.example.com/my-visualization`)
+1. In the theme settings, find the **Markmap URL** field
+2. Enter your markmap visualization URL (e.g., `https://markmap.example.com/my-visualization`)
+3. To disable the button, simply leave this field blank
 
-### Step 3: Save and Publish
+### Step 3: Save Changes
 
-1. Click "Save" to save your changes
-2. Publish or update your post/page
+1. Click **Save** to apply your changes
+2. The markmap button will now appear on all posts and pages (if a URL is provided)
 
 The markmap button will automatically appear below the post/page title with multilingual text in Esperanto, French, and English.
 
@@ -41,27 +40,30 @@ View this content in markmap form
 
 If your markmap is hosted at `https://markmap.example.com/my-visualization`:
 
-1. Add a custom field with name `markmap_url`
-2. Set the value to `https://markmap.example.com/my-visualization`
-3. Save and publish
+1. Open theme settings (Settings → Design → Customize)
+2. Find the **Markmap URL** field
+3. Enter `https://markmap.example.com/my-visualization`
+4. Save changes
+
+The button will appear on all posts and pages.
 
 ## Troubleshooting
 
 **Button doesn't appear:**
-- Verify the custom field name is exactly `markmap_url` (case-sensitive)
-- Check that the field value has a valid URL (must start with http:// or https://)
+- Verify you've entered a URL in the theme settings
+- Check that the URL is valid (must start with http:// or https://)
 - Clear your browser cache and reload the page
-- Make sure "Show title and feature image" is enabled (for pages)
+- For pages: Make sure "Show title and feature image" is enabled in page settings
 
 **Button appears but link is wrong:**
-- Double-check the URL in the custom field value
+- Double-check the URL in theme settings
 - Make sure there are no extra spaces or characters
 
 ## Technical Details
 
 The markmap button implementation uses:
-- A custom field (`markmap_url`) for per-post/page configuration
+- A theme-level custom setting (`markmap_url`) configured in Settings → Design
 - JavaScript to dynamically create the button from the data attribute
 - CSS styling defined in `assets/css/blog/post.css`
 
-The button appears on individual post and page templates when the `markmap_url` custom field is set.
+The button appears on individual post and page templates when the `markmap_url` setting is provided.

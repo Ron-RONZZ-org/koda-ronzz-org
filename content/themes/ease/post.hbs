@@ -12,8 +12,8 @@
                 Last updated on&nbsp;
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date updated_at format="DD MMM YYYY"}}</time>
             </div>
-            {{#if custom_markmap_url}}
-            <div id="markmap-button-container" data-markmap-url="{{custom_markmap_url}}"></div>
+            {{#if @custom.markmap_url}}
+            <div id="markmap-button-container" data-markmap-url="{{@custom.markmap_url}}"></div>
             {{/if}}
             {{> "post-image"}}
         </header>
