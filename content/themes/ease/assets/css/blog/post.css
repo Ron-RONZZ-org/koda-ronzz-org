@@ -132,6 +132,8 @@
   font-weight: 600;
   text-decoration: none;
   transition: 0.12s ease;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .markmap-button:hover {

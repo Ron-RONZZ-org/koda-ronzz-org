@@ -44,10 +44,12 @@ jQuery.noConflict();
 
 document.addEventListener('DOMContentLoaded', function () {
     const targetContainer = document.getElementById('markmap-button-container');
-    const metaTag = document.querySelector('meta[name="markmap-url"]');
-    const urlValue = metaTag && metaTag.getAttribute('content');
     
-    if (!targetContainer || !metaTag || !urlValue) return;
+    if (!targetContainer) return;
+    
+    const urlValue = targetContainer.getAttribute('data-markmap-url');
+    
+    if (!urlValue) return;
     
     try {
         const parsedUrl = new URL(urlValue);
@@ -65,7 +67,13 @@ document.addEventListener('DOMContentLoaded', function () {
     linkElement.className = 'markmap-button';
     linkElement.target = '_blank';
     linkElement.rel = 'noopener noreferrer';
-    linkElement.textContent = 'Vidigi markmapon';
+    
+    // Create text nodes for each line to avoid XSS risks
+    linkElement.appendChild(document.createTextNode('Vidi ĉi tiun kiel markmapon'));
+    linkElement.appendChild(document.createElement('br'));
+    linkElement.appendChild(document.createTextNode('Visualiser ce contenu en markmap'));
+    linkElement.appendChild(document.createElement('br'));
+    linkElement.appendChild(document.createTextNode('View this content in markmap form'));
     
     targetContainer.appendChild(linkElement);
 });

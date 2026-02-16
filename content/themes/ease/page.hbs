@@ -8,6 +8,9 @@
         {{#match @page.show_title_and_feature_image}}
             <header class="gh-article-header gh-canvas">
                 <h1 class="gh-article-title">{{title}}</h1>
+                {{#if @custom.markmap_url}}
+                <div id="markmap-button-container" data-markmap-url="{{@custom.markmap_url}}"></div>
+                {{/if}}
                 {{> "post-image"}}
             </header>
         {{/match}}
